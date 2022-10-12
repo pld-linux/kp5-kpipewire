@@ -71,6 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
+%doc README.md
 %ghost %{_libdir}/libKPipeWire.so.5
 %{_libdir}/libKPipeWire.so.5.*.*
 %ghost %{_libdir}/libKPipeWireRecord.so.5
