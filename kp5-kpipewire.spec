@@ -7,7 +7,7 @@
 Summary:	a set of convenient classes to use PipeWire in Qt projects
 Name:		kp5-%{kpname}
 Version:	5.26.1
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -76,8 +76,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libKPipeWire.so.5.*.*
 %ghost %{_libdir}/libKPipeWireRecord.so.5
 %{_libdir}/libKPipeWireRecord.so.5.*.*
+%dir %{_libdir}/qt5/qml/org/kde/pipewire
 %{_libdir}/qt5/qml/org/kde/pipewire/libKPipeWireDeclarative.so
 %{_libdir}/qt5/qml/org/kde/pipewire/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/pipewire/record
 %{_libdir}/qt5/qml/org/kde/pipewire/record/libKPipeWireRecordDeclarative.so
 %{_libdir}/qt5/qml/org/kde/pipewire/record/qmldir
 %{_datadir}/qlogging-categories5/kpipewire.categories
