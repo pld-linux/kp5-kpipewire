@@ -15,6 +15,7 @@ Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{vers
 URL:		http://www.kde.org/
 BuildRequires:	Qt5WaylandClient-devel
 BuildRequires:	cmake >= 2.8.12
+BuildRequires:	ffmpeg-devel
 BuildRequires:	kf5-extra-cmake-modules
 BuildRequires:	ninja
 BuildRequires:	pipewire-devel
