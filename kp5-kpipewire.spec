@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.26.4
+%define		kdeplasmaver	5.26.5
 %define		qtver		5.15.2
 %define		kpname		kpipewire
 Summary:	a set of convenient classes to use PipeWire in Qt projects
 Name:		kp5-%{kpname}
-Version:	5.26.4
-Release:	2
+Version:	5.26.5
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	b3a40dc5c74a53889fd6b3204bf91124
+# Source0-md5:	71fce4036d0f6a6fdc9bf5db3d47b9c9
 URL:		http://www.kde.org/
 BuildRequires:	Qt5WaylandClient-devel
 BuildRequires:	cmake >= 2.8.12
