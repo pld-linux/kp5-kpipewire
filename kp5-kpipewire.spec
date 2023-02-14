@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.26.5
+%define		kdeplasmaver	5.27.0
 %define		qtver		5.15.2
 %define		kpname		kpipewire
 Summary:	a set of convenient classes to use PipeWire in Qt projects
 Name:		kp5-%{kpname}
-Version:	5.26.5
+Version:	5.27.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	71fce4036d0f6a6fdc9bf5db3d47b9c9
+# Source0-md5:	46b3d28cb55bbbb0042f8a145910efc9
 URL:		http://www.kde.org/
 BuildRequires:	Qt5WaylandClient-devel
 BuildRequires:	cmake >= 2.8.12
@@ -86,6 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/pipewire/record/qmldir
 %{_datadir}/qlogging-categories5/kpipewire.categories
 %{_datadir}/qlogging-categories5/kpipewirerecord.categories
+%ghost %{_libdir}/libKPipeWireDmaBuf.so.5
+%{_libdir}/libKPipeWireDmaBuf.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
@@ -93,3 +95,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/cmake/KPipeWire
 %{_libdir}/libKPipeWire.so
 %{_libdir}/libKPipeWireRecord.so
+%{_libdir}/libKPipeWireDmaBuf.so
