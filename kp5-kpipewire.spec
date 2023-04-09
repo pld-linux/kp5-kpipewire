@@ -7,7 +7,7 @@
 Summary:	a set of convenient classes to use PipeWire in Qt projects
 Name:		kp5-%{kpname}
 Version:	5.27.4
-Release:	3
+Release:	4
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
