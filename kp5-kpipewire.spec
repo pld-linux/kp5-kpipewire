@@ -1,27 +1,27 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.93.0
+%define		kdeplasmaver	5.27.10
 %define		qtver		5.15.2
 %define		kpname		kpipewire
 Summary:	a set of convenient classes to use PipeWire in Qt projects
 Name:		kp5-%{kpname}
-Version:	5.93.0
-Release:	0.1
+Version:	5.27.10
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	2726262f896f47e1860018909a99cad5
+Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+# Source0-md5:	7f432fbb0d205d6e30714e731f91a459
 URL:		http://www.kde.org/
-BuildRequires:	Qt6WaylandClient-devel
+BuildRequires:	Qt5WaylandClient-devel
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	ffmpeg-devel
+BuildRequires:	kf5-extra-cmake-modules
+BuildRequires:	kf5-kwayland-devel
 BuildRequires:	kf5-plasma-wayland-protocols-devel
-BuildRequires:	kf6-extra-cmake-modules
-BuildRequires:	kp5-kwayland-devel
 BuildRequires:	ninja
 BuildRequires:	pipewire-devel
-BuildRequires:	qt6-build >= %{qtver}
+BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -74,29 +74,20 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
 %doc README.md
-%ghost %{_libdir}/libKPipeWire.so.6
-%attr(755,root,root) %{_libdir}/libKPipeWire.so.5.*.*
-%ghost %{_libdir}/libKPipeWireRecord.so.6
-%attr(755,root,root) %{_libdir}/libKPipeWireRecord.so.5.*.*
-%dir %{_libdir}/qt6/qml/org/kde/pipewire
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/pipewire/libKPipeWireDeclarative.so
-%{_libdir}/qt6/qml/org/kde/pipewire/qmldir
-%dir %{_libdir}/qt6/qml/org/kde/pipewire/monitor
-%dir %{_libdir}/qt6/qml/org/kde/pipewire/record
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/pipewire/record/libKPipeWireRecordDeclarative.so
-%{_libdir}/qt6/qml/org/kde/pipewire/record/qmldir
-%{_datadir}/qlogging-categories6/kpipewire.categories
-%{_datadir}/qlogging-categories6/kpipewirerecord.categories
-%ghost %{_libdir}/libKPipeWireDmaBuf.so.6
-%attr(755,root,root) %{_libdir}/libKPipeWireDmaBuf.so.*.*.*
-%{_libdir}/qt6/qml/org/kde/pipewire/KPipeWireDeclarative.qmltypes
-%{_libdir}/qt6/qml/org/kde/pipewire/kde-qmlmodule.version
-%{_libdir}/qt6/qml/org/kde/pipewire/monitor/KPipeWireMonitorDeclarative.qmltypes
-%{_libdir}/qt6/qml/org/kde/pipewire/monitor/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/pipewire/monitor/libKPipeWireMonitorDeclarative.so
-%{_libdir}/qt6/qml/org/kde/pipewire/monitor/qmldir
-%{_libdir}/qt6/qml/org/kde/pipewire/record/KPipeWireRecordDeclarative.qmltypes
-%{_libdir}/qt6/qml/org/kde/pipewire/record/kde-qmlmodule.version
+%ghost %{_libdir}/libKPipeWire.so.5
+%{_libdir}/libKPipeWire.so.5.*.*
+%ghost %{_libdir}/libKPipeWireRecord.so.5
+%{_libdir}/libKPipeWireRecord.so.5.*.*
+%dir %{_libdir}/qt5/qml/org/kde/pipewire
+%{_libdir}/qt5/qml/org/kde/pipewire/libKPipeWireDeclarative.so
+%{_libdir}/qt5/qml/org/kde/pipewire/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/pipewire/record
+%{_libdir}/qt5/qml/org/kde/pipewire/record/libKPipeWireRecordDeclarative.so
+%{_libdir}/qt5/qml/org/kde/pipewire/record/qmldir
+%{_datadir}/qlogging-categories5/kpipewire.categories
+%{_datadir}/qlogging-categories5/kpipewirerecord.categories
+%ghost %{_libdir}/libKPipeWireDmaBuf.so.5
+%{_libdir}/libKPipeWireDmaBuf.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
